@@ -11,6 +11,10 @@ body {
     color: #333;
 }
 
+ul , li {
+    list-style: none;
+}
+
 /* ヘッダー */
 header {
     background-color: #fff;
@@ -57,7 +61,8 @@ nav {
 
 /* ヒーローセクション */
 .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/mv_bg1.jpg');
+    /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg'); */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -297,5 +302,242 @@ footer {
     .service-items,
     .price-table {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================== 
+サービス詳細ページのスタイル 
+========================== */
+.service-detail {
+    padding-top: 80px; /* ヘッダーの高さ分 */
+    padding-bottom: 5rem;
+}
+
+.service-detail .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.service-detail h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.service-detail h1 i {
+    margin-right: 1rem;
+    color: #666;
+}
+
+.service-description {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.service-description h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* サービス内容のグリッドレイアウト */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.feature-item ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.feature-item ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.feature-item ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+}
+
+/* サービスの流れ */
+.service-process {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.service-process h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.service-process ol {
+    list-style: none;
+    counter-reset: service-steps;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-process ol li {
+    counter-increment: service-steps;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+    color: #666;
+}
+
+.service-process ol li:before {
+    content: counter(service-steps);
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ご利用にあたって */
+.service-notes {
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.service-notes h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.service-notes ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service-notes ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.service-notes ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+/* CTAセクション */
+.cta-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .service-detail h1 {
+        font-size: 2rem;
+    }
+
+    .service-description h2,
+    .service-process h2,
+    .service-notes h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-process ol li,
+    .service-notes ul li {
+        padding-left: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-detail h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-description p {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        padding: 1.5rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
     }
 }
